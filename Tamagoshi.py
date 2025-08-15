@@ -20,21 +20,26 @@ class Tamaghosi:
     def getHumor(self):
         return 100 - ((self.fome + self.tedio) / 2)
 
+    # Diminui a saúde do bichinho conforme as condições de fome (quanto mais alta, pior) e tédio (quanto mais entendiado, pior).
     def vida(self):
         if ((self.fome > 50 and self.fome <= 60)) or ((self.tedio > 50 and self.tedio <= 60)):
             self.saude -= 10
+
         elif ((self.fome > 60 and self.fome <= 60)) or ((self.tedio > 60 and self.tedio <= 60)):
             self.saude -= 30
+
         elif ((self.fome > 80 and self.fome <= 90)) or ((self.tedio > 80 and self.tedio <= 60)):
             self.saude -= 50
+
         elif (self.fome > 90) or (self.tedio > 90):
             print("Estou morrendo.......AHHHHHHHHHHHHHHHHHHHHHHH")
+
         elif (self.fome > 99) or (self.tedio > 99):
             self.saude = 0
-            print("Seu bichinho morreu")
+            print("Seu bichinho morreu!")
 
     def tempoPassando(self):
         self.vida() # Atualiza a sáude baseado na sua fome e tédio atuais.
         self.idade += 0.2 # O tempo passa e o bichinho envelhece 0.2 anos (2 meses?)
         self.tedio += 2.5 # Aumenta o tédio com o passar do tempo.
-        self.fome += 5 # 
+        self.fome += 5 # Aumenta a fome em 5 unidades.
